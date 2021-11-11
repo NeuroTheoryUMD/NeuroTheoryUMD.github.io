@@ -1,0 +1,83 @@
+@charset "UTF-8";
+/* CSS Document */
+
+header {
+	font-family: 'acumin-pro-extra-condensed', sans-serif;
+	text-align: left;
+	padding: 0px;
+}
+
+.site-logo {
+	width: 100%;
+	object-fit: fill;
+	padding: 0px;
+	position: static;		
+}
+
+.NTlab {
+	position: absolute;
+	top: 0px;
+  	left: 20px;
+	padding: 0px;
+}
+
+.site-nav {
+	font-family: 'acumin-pro-extra-condensed', sans-serif;
+	color:#FE0206;
+	text-align: left;
+	text-transform: capitalize;
+	position: absolute;
+	top: 0px;
+  	right: 15px;
+}
+
+.menu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+	float: right;
+	margin-bottom: 6pt;
+}
+	
+.menu {
+  display: block;
+  color: #FE0206;
+  padding: 8px 8px;
+  text-decoration: none;
+}
+
+/* Change the link color on hover */
+li a:hover {
+  background-color: #555;
+  color: darkred;
+}
+
+/* marks what current page is using class="active" */
+.active {
+  background-color: #04AA6D;
+}
+
+.intro {
+	position: static;
+	/*font-family: Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", "serif";*/
+	/* font-family: "DejaVu Sans", "Trebuchet MS", Verdana, "sans-serif"; */
+	font-family: Montserrat;
+	font-size: 1em;
+	text-align: justify;
+}
+
+.news {
+	position: static;
+	/*font-family: Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", "serif";*/
+	/* font-family: "DejaVu Sans", "Trebuchet MS", Verdana, "sans-serif"; */
+	font-family: Montserrat;
+	font-size: 0.9em;
+	text-align: justify;	
+}
+
+.news li {
+	margin-bottom: 6pt;
+}
