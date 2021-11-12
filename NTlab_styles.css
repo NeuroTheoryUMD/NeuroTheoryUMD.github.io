@@ -36,8 +36,9 @@ header {
   margin: 0;
   padding: 0;
   display: block;
-  color: #FE0206;
-  padding: 3px 10px;
+  /*color: #FE0206;*/
+  color: #000000;
+  padding: 8px 0px 0px 20px;
   text-decoration: none;
 }
 
@@ -49,9 +50,34 @@ header {
 
 /* Change the link color on hover */
 .menu li a:hover {
-  background-color: #555;
-  color: darkred;
+  color: #F60004;
+  /*background-color: #FF0004;
+  color: darkred;*/
 }
+
+.menu_alt {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: block;
+  /*color: #FE0206;*/
+  color: red;
+  padding: 8px 0px 0px 20px;
+  text-decoration: none;
+}
+
+.menu_alt li {
+	float: right;
+	/*background-color: #2E98D8;*/
+	/*margin-bottom: 2pt;*/
+}
+
+.menu_alt li a:hover {
+  color: #E7F600;
+  /*background-color: #FF0004;
+  color: darkred;*/
+}
+
 
 /* marks what current page is using class="active" */
 .active {
