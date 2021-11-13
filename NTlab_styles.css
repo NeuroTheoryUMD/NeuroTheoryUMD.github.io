@@ -16,6 +16,7 @@ header {
 
 .NTlab {
 	position: absolute;
+	color: #060265;
 	top: 0px;
   	left: 20px;
 	padding: 0px;
@@ -37,7 +38,7 @@ header {
   padding: 0;
   display: block;
   /*color: #FE0206;*/
-  color: #000000;
+  color: #060265;
   padding: 8px 0px 0px 20px;
   text-decoration: none;
 }
