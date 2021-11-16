@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Nonlinear Input Model</title>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-41352692-3']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</head>
+
+<body>
+<h1>The Nonlinear Input Model (NIM)</h1>
+<p>Hosted by the <a href="./index.html" target="new">NeuroTheory Lab</a> at <a href="http://www.umd.edu" target="new">University of Maryland</a></p>
+<h3>Description:</h3>
+<p>The Nonlinear Input Model (NIM) is a probabilistic model for describing nonlinear computation in sensory neurons. In this model, the predicted firing rate is given as a sum over nonlinear inputs followed by a 'spiking nonlinearity' function (equivalent to an LNLN cascade):</p>
+<p><img src="../Images/NIMschematic.jpg" width="917" height="304" alt="NIM Schematic" /></p>
+<p>Each nonlinear input is itself specified by a linear stimulus filter, as well as a static 'upstream nonlinearity' that is assumed to be some rectifying function. As a result, the model neuron can be viewed as integrating a set of stimulus-driven inputs that are either excitatory or suppressive. The  stimulus filters, and the form of the 'upstream nonlinearities', can be inferred from the data (along with additional linear terms describing e.g. spike-history dependence). </p>
+<p>Our paper, which describes parameter estimation procedures in detail and shows a variety of applications, can be downloaded here:</p>
+<ul>
+  <li>McFarland JM, Cui Y, Butts DA (2013) Inferring nonlinear neuronal computation based on physiologically plausible inputs. <em>PLoS Computational Biology</em> <strong>9</strong>(7): e1003142. [<a href="http://www.ploscompbiol.org/article/info%3Adoi/10.1371/journal.pcbi.1003143">PDF on PLoS website</a>, <a href="/biology/ntlab/NIM/NIM_files/NIM_preprint_suppl.pdf" onclick="_gaq.push(['_trackEvent','Documents','Download','NIM_supplement']);">Supplemental Materials]</a></li>
+</ul>
+<p>Note that this model can implicitly be used to fit other previously suggested probabilistic models of neural spiking:</p>
+<ul>
+  <li>Generalized Linear Model (GLM) [Paninski (2004); Truccolo et al. (2005)], where the upstream nonlinearities are fixed as linear. </li>
+  <li>Generalized Quadratic Model (GQM) [Park and Pillow (2011)], where the upstream nonlinearities are fixed to be linear and quadratic.</li>
+</ul>
+We thus offer model estimation code that can flexibly describe sensory neuron computation using a number of state-of-the-art models.
+<h3>Code:</h3>
+<p>We have provided a <em>Matlab</em> toolbox for estimating parameters of the Nonlinear Input Model from spiking data (see links below). In addition to  routines for estimating the stimulus filters and upstream nonlinearities associated with each nonlinear input, the toolbox contains functions for estimating parameters of the spiking nonlinearity function, and includes built-in support for modeling spike-history dependence. Likewise, upstream nonlinearities can be fixed to estimate the GLM and GQM. Several different forms of regularization on the stimulus filters and upstream nonlinearities are currently supported, including sparseness (L1 norm) and several forms of smoothness (L2 norm) regularization. </p>
+<p>Several example applications of the model to simulated data are currently available for download below, and we plan to add more examples soon. </p>
+<p><strong>To install:</strong> Once the NIMtoolbox is unzipped, its directory should be added to your <em>Matlab</em> path. This code relies on the <em>Matlab</em> Optimization toolbox, as well as optimization routines provided by Mark Schmidt. Mark Schmidt's L1-optimization routines (<a href="http://www.di.ens.fr/~mschmidt/Software/L1General.html">L1General</a>) must be installed to use L1-regularization. Additionally, we strongly recommend installing Mark Schmidt's functions <a href="http://www.di.ens.fr/~mschmidt/Software/minFunc.html">minFunc</a> and <a href="http://www.di.ens.fr/~mschmidt/Software/minConf.html">minConf</a> to take advantage of all regularization possibilities and  speed up parameter optimization. </p>
+<p><strong>Source Code</strong>: <a href="./NIM_files/NIMtoolbox.zip" onclick="_gaq.push(['_trackEvent','Code','Download','NIMtoolbox']);">NIMtoolbox.zip</a> (last updated Aug 22, 2013)</p>
+<p><strong>Example applications (try these first to learn how to use the code)</strong>:</p>
+<ul>
+  <li><a href="./NIM_files/NIMdemo_RGCsim.zip" onclick="_gaq.push(['_trackEvent','Code','Download','RGCsim_demo']);">NIMdemo_RGCsim.zip</a>: simulated ON-OFF retinal ganglion cell in response to temporally modulated white noise (see Figures 1 and 3 in the manuscript).</li>
+  <li><a href="./NIM_files/NIMdemo_LGNtemporal.zip" onclick="_gaq.push(['_trackEvent','Code','Download','V1sim1d_demo']);">NIMdemo_LGNtemporal.zip</a>: application to processed data from an LGN neuron in response to temporally modulated white noise stimuli, recorded in the Alonso Lab (SUNY), and described in detail in <a href="../publications.html">Butts <em>et al.</em> (2011)</a>. Includes demonstration of applications of spike-history terms, and cross-validation.</li>
+  <li><a href="./NIM_files/NIMdemo_V1sim1d.zip" onclick="_gaq.push(['_trackEvent','Code','Download','V1sim1d_demo']);">NIMdemo_V1sim1d.zip</a>: simulated V1 neuron in response to optimally oriented &quot;random bar&quot; data (<a href="./NIM_files/NIMdemo_V1sim1d.zip" onclick="_gaq.push(['_trackEvent','Code','Download','V1sim1d_demo']);"></a>see Figure 6 in the manuscript).</li>
+  <li><a href="./NIM_files/NIMdemo_Auditory.zip" onclick="_gaq.push(['_trackEvent','Code','Download','V1sim1d_demo']);">NIMdemo_Auditory.zip</a>: simulated auditory neuron in response to naturalistic sound (represented in a spectrogram). Includes demonstration of nested cross-validation and regularization.</li>
+  <li>More applications (to simulated and real data) to be added...</li>
+</ul>
+<p>See the references and help documentation for further details. Please report any bugs to: jmmcfarl at umd dot edu.</p>
+<h3></h3>
+<p><strong>Contributed applications of the NIM welcome</strong>!</p>
+<p>Related Papers:</p>
+<ul>
+  <li>Butts DA, Weng C, Jin JZ, Alonso JM, Paninski L (2011) Temporal precision in the visual pathway through the interplay of excitation and stimulus-driven suppression. <em>J. Neurosci.</em> <strong>31</strong>: 11313-27. [<a title="Publications_files/Butts2011.pdf" href="http://www.clfs.umd.edu/biology/ntlab/NTlab/Publications_files/Butts2011.pdf">PDF</a>, <a href="http://www.clfs.umd.edu/biology/ntlab/NTlab/GNM.html">Additional information</a>]</li>
+  <li>Schinkel-Bielefeld N, David SV, Shamma SA, Butts DA (2012) Inferring the role of inhibition in auditory processing of complex natural stimuli. <em>J. Neurophysiol.</em> <strong>107</strong>: 3296. [<a href="http://www.clfs.umd.edu/biology/ntlab/NTlab/Publications_files/Schinkel-Bielefeld2012.pdf">PDF</a>]</li>
+  <li>Lochmann T, Blanche TJ, Butts DA (2013) Pooling of local features as a basis for direction selectivity in the primary visual cortex. <em>PLoS One</em> <strong>8</strong>: e58666. [<a title="Publications_files/Lochmann2013.pdf" href="http://www.clfs.umd.edu/biology/ntlab/NTlab/Publications_files/Lochmann2013.pdf">PDF</a>]</li>
+  <li>Paninski L (2004) Maximum likelihood estimation of cascade point-process neural encoding models. <em>Network</em> <strong>15</strong>: 243-262.</li>
+  <li>Truccolo W, Eden UT, Fellows MR, Donoghue JP, Brown EN (2005) A point process framework for relating neural spiking activity to spiking history, neural ensemble, and extrinsic covariate effects. <em>J Neurophysiol</em> <strong>93</strong>: 1074-1089.</li>
+  <li>Park IM, Pillow JW (2011) Bayesian spike-triggered covariance analysis. <em>Adv Neural Inf Process Syst (NIPS)</em> <strong>24</strong>: 1692-1700.</li>
+</ul>
+<h3></h3>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+</body>
+</html>
+

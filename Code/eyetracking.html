@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>NeuroTheory Lab Code</title>
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700">
+	<link rel="stylesheet" href="../NTlab_styles.css">
+</head>
+	
+<body>
+	<!-- Header -->
+	<header>
+		<a class="site-logo" href="index.html">
+			<img src="../Images/NTlabBackStrip.jpg" width="100%">
+			<div class="NTlab"><h1>NeuroTheory Lab Code</h1></div>
+
+			<nav class="site-nav">
+				<ul class="menu">
+					<li><a class="menu" href="../code.html"><h3>Code</h3></a></li>
+					<li><a class="menu" href="../presentations.html"><h3>Presentations</h3></a></li>
+					<li><a class="menu" href="../publications.html"><h3>Publications</h3></a></li>
+					<li><a class="menu" href="../people.html"><h3>People</h3></a></li>
+					<li><a class="menu" href="../research.html"><h3>Research</h3></a></li>
+				</ul>
+			</nav>
+		</a>
+	</header>
+	
+	<!-- Main content -->
+	<main>
+		<section class="intro">
+			<h1>Eye-tracking using V1 neuron activity (2014)</h1>
+			<h3>Description:</h3>
+			<p>This algorithm uses probabilistic models of the stimulus processing of visual cortical neurons to infer an animal's eye position. It is designed for use with multi-electrode array recordings from primary visual cortex during presentation of dynamic stimuli. The basic idea behind the algorithm is that one can use models of each neuron's stimulus processing  to predict their response to a given displayed stimulus over a range of possible eye positions, with different eye positions corresponding to translations of the image on the retina. At a given time one can then infer the likelihood of each eye position given the neurons' observed spiking activity. By integrating such evidence across a population of neurons, and utilizing a simple model of eye position dynamics, we can accurately track an animal's fixational eye movements, and use the estimated eye positions to generate more accurate models of the neurons' stimulus processing.</p>
+			<p>Since the stimulus processing models  themselves depends on the estimated eye positions (which are used to reconstruct the retinal stimulus), the eye-tracking method uses an expectation maximization algorithm to alternate between estimating the stimulus-processing models given a sequence of eye positions, and estimating the eye positions given stimulus processing models. This alternation converges rapidly and is robust towards initial estimates of the eye positions and stimulus processing models.</p>
+			<p>Details can be found in our paper</p>
+			<ul>
+				<li>McFarland JM, Bondy AG, Cumming BG, Butts DA (2014) High-resolution eye tracking using V1 neuron activity. <em>Nature Communications.</em> 5:4605. [<a href="http://www.nature.com/ncomms/2014/140908/ncomms5605/full/ncomms5605.html">PDF on Nat Comms website</a>]</li>
+			</ul>
+			
+			<h3>Code:</h3>
+			<p>  We provide a demonstration of our algorithm applied to a simulated data set. The simulation is based on a recording from a 96-electrode Utah-array, and contains 101 units whose stimulus tuning is given by quadratic functions of the stimulus (based on models estimated from the recorded neural population). The simulated data (<em>simDATA.mat</em>), demo script (<em>ET_demo.m</em>) and associated helper functions can be downloaded here:</p>
+			<p><a href="./EyeTracking_files/ET_demo.zip">Demo Code</a></p>
+			<p>We use the Nonlinear input model (NIM) framework for estimating stimulus-processing models. Thus, to run the demo script, the NIMtoolbox must be included in the Matlab path. The NIM toolbox can be downloaded <a href="NIM_site.html">here</a>. Note that with the default settings (using L1 regularization) the code also requires that Mark Schmidt's function <em>L1General</em> be installed. See the NIM website for information on downloading Mark Schmidt's code.<br />
+			  Also, see the included help documentation for more details on the simulated data and demo script.</p>
+		</section>
+	</main>
+</body>
+</html>
