@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>NeuroTheory Lab Code</title>
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700">
+	<link rel="stylesheet" href="NTlab_styles.css">
+</head>
+	
+<body>
+	<!-- Header -->
+	<header>
+		<a class="site-logo" href="index.html">
+			<img src="./Images/NTlabBackStrip.jpg" width="100%">
+			<div class="NTlab"><h1>NeuroTheory Lab Code</h1></div>
+
+			<nav class="site-nav">
+				<ul class="menu">
+					<li><a class="menu" href="#"><h3>Code</h3></a></li>
+					<li><a class="menu" href="presentations.html"><h3>Presentations</h3></a></li>
+					<li><a class="menu" href="publications.html"><h3>Publications</h3></a></li>
+					<li><a class="menu" href="people.html"><h3>People</h3></a></li>
+					<li><a class="menu" href="research.html"><h3>Research</h3></a></li>
+				</ul>
+			</nav>
+		</a>
+	</header>
+	
+	<!-- Main content -->
+	<main>
+		<section class="intro">
+			<p>We develop code for analyzing neurophysiology datasets in various contexts, with a focus on capturing nonlinear, physiologically relevant, computations performed in neural systems. Code is in both <i>Matlab</i> (historical) and <i>Python</i>.
+		</section>
+		<section class="news">
+			<h3>Published code</h3>
+			<ul>
+				<li>
+					<b>The Nonlinear Input Model (NIM)</b>, published in McFarland et al. (<a href="http://www.ploscompbiol.org/article/info%3Adoi%2F10.1371%2Fjournal.pcbi.1003143" target="_new">PLoS CB, 2013</a>). [<a href="./Code/NIM_site.html">More information</a>]
+					<br><i>A statistical model for describing nonlinear computation in sensory neurons. It is in form of an LNLN (linear-nonlinear x2) cascade, with its predicted firing rate given as a sum over nonlinear inputs followed by a spiking nonlinearity.</i>
+				</li>
+				<li>
+					<b>The Separable NIM (sNIM)</b>, published in Shi et al. (<a href="https://www.nature.com/articles/s41598-019-45048-8" target="_new">Sci Rep, 2019</a>). [<a href="https://github.com/dbutts/sNIMclass" target="_new">Github</a>]
+					<br><i>The sNIM is a version of the NIM (see above) that uses spatiotemporal filters comprised of space-time-separable elements. This allows for detailed spatiotemporal characterization of spatial and temporal sensitivity for neurons with receptive fields where this approximation is valid, such as in the retina.</i>
+				</li>
+				<li>
+					<b>The Rectified Latent Variable Model (RVLM)</b> published in Whiteway and Butts (<a href="http://jn.physiology.org/content/117/3/919" target="_new">J Neurophys, 2017</a>). [<a href="https://github.com/themattinthehatt/rlvm" target="_new">Github</a>]
+					<br><i>The Rectified Latent Variable Model (RLVM) is a probabilistic model for describing the activity of a large population of neurons based on a much smaller set of inputs (i.e., latent variables). Key elements of the model that distinguish it from other approaches are the constraint that the latent variables be non-negative (e.g., like neural activity), and a lack of other constraints (i.e., need not be uncorrelated, independent, Gaussian-distributed, etc.)</i>
+				</li>
+				<li>
+					<b>Precise eye-tracking using V1 neural activity</b> published in McFarland et al. (<a href="" target="_new">Nat Comm, 2014</a>). [<a href="./Code/eyetracking.html">More info</a>]
+					<br><i>An algorithm that uses probabilistic models (see NIM) of the stimulus processing of visual cortical neurons to infer an animal's eye position from the spiking activity of a recorded neural population.</i>
+				</li>
+				<li>
+					<b>GLM implementation</b> of stimulus- and choice-driven activity in V2 and V3, supporting Quinn et al. (<a href="https://www.nature.com/articles/s41467-021-24629-0">Nat Comm, 2021</a>) [<a href="https://github.com/NienborgLab/Quinn_et_al_2021/" target="_new">Github</a>]
+				</li>
+			</ul>
+			<h3>Neural deep network code currently in development</h3>
+			<p>Check back soon...</p>
+		</section>
+	</main>
+</body>
+</html>
