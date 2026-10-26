@@ -1,5 +1,5 @@
 @charset "UTF-8";
-/* CSS Document */
+/* NeuroTheory Lab site styles */
 
 header {
 	font-family: 'acumin-pro-extra-condensed', sans-serif;
@@ -11,98 +11,82 @@ header {
 	width: 100%;
 	object-fit: fill;
 	padding: 0px;
-	position: static;		
+	position: static;
 }
 
 .NTlab {
 	position: absolute;
 	color: #060265;
 	top: 0px;
-  	left: 20px;
+	left: 20px;
 	padding: 0px;
 }
 
 .site-nav {
 	font-family: 'acumin-pro-extra-condensed', sans-serif;
-	color:#FE0206;
+	color: #FE0206;
 	text-align: left;
 	text-transform: capitalize;
 	position: absolute;
 	top: 0px;
-  	right: 15px;
+	right: 15px;
 }
 
+/* Navigation, navy text (.menu) or red text (.menu_alt) */
 .menu {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  display: block;
-  /*color: #FE0206;*/
-  color: #060265;
-  padding: 8px 0px 0px 20px;
-  text-decoration: none;
+	list-style-type: none;
+	margin: 0;
+	display: block;
+	color: #060265;
+	padding: 8px 0px 0px 20px;
+	text-decoration: none;
 }
 
 .menu li {
 	float: right;
-	/*background-color: #2E98D8;*/
-	/*margin-bottom: 2pt;*/
 }
 
-/* Change the link color on hover */
 .menu li a:hover {
-  color: #F60004;
-  /*background-color: #FF0004;
-  color: darkred;*/
+	color: #F60004;
 }
 
 .menu_alt {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  display: block;
-  /*color: #FE0206;*/
-  color: red;
-  padding: 8px 0px 0px 20px;
-  text-decoration: none;
+	list-style-type: none;
+	margin: 0;
+	display: block;
+	color: red;
+	padding: 8px 0px 0px 20px;
+	text-decoration: none;
 }
 
 .menu_alt li {
 	float: right;
-	/*background-color: #2E98D8;*/
-	/*margin-bottom: 2pt;*/
 }
 
 .menu_alt li a:hover {
-  color: #E7F600;
-  /*background-color: #FF0004;
-  color: darkred;*/
+	color: #E7F600;
 }
 
-
-/* marks what current page is using class="active" */
-.active {
-  background-color: #04AA6D;
-}
-
+/* Page text */
 .intro {
 	position: static;
-	/*font-family: Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", "serif";*/
-	/* font-family: "DejaVu Sans", "Trebuchet MS", Verdana, "sans-serif"; */
-	font-family: Montserrat;
+	font-family: Montserrat, sans-serif;
 	font-size: 1em;
 	text-align: justify;
 }
 
 .news {
 	position: static;
-	/*font-family: Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", "serif";*/
-	/* font-family: "DejaVu Sans", "Trebuchet MS", Verdana, "sans-serif"; */
-	font-family: Montserrat;
+	font-family: Montserrat, sans-serif;
 	font-size: 0.9em;
-	text-align: justify;	
+	text-align: justify;
 }
 
 .news li {
 	margin-bottom: 6pt;
+}
+
+/* Publications where the lab is a smaller part of the work */
+.pub_grey {
+	color: #848484;
 }
